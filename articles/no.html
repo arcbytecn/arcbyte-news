@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ArcByte News Article</title>
+<link rel="icon" href="./logos/favicon.png" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #02030c;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ===================== Background Orb ===================== */
+.bg-semi-orb {
+    position: fixed;
+    width: 2200px;
+    height: 1000px;
+    left: 50%;
+    bottom: -420px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at center, #4b6cff, #1b2bff);
+    border-radius: 2200px 2200px 0 0;
+    filter: blur(260px);
+    opacity: 0.9;
+    z-index: -1;
+    animation: orbBreath 16s ease-in-out infinite;
+}
+
+@keyframes orbBreath {
+    0% { transform: translateX(-50%) scale(0.95); opacity: 0.6; }
+    50% { transform: translateX(-50%) scale(1.12); opacity: 1; }
+    100% { transform: translateX(-50%) scale(0.95); opacity: 0.6; }
+}
+
+/* ===================== Navigation ===================== */
+.island-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: min(800px, calc(100% - 40px));
+    padding: 14px 28px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(22px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.island-nav a {
+    color: #cfd9ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.island-nav a:hover {
+    color: white;
+}
+
+.nav-logo {
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-center {
+    gap: 32px;
+}
+
+.nav-right {
+    gap: 20px;
+}
+
+/* Fixed nav install button */
+.nav-install {
+    padding: 8px 22px;
+    border-radius: 999px;
+    background: white;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-install:hover {
+    background: #eaeaea;
+}
+
+/* language dropdown */
+.lang {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+/* ===================== Hero ===================== */
+.hero {
+    height: 42vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 56px;
+}
+
+.hero p {
+    margin-top: 12px;
+    font-size: 16px;
+    color: #cfd9ff;
+}
+
+/* ===================== Article ===================== */
+.article-container {
+    max-width: 900px;
+    margin: 60px auto 120px auto;
+    padding: 0 20px;
+}
+
+.article-image img {
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+    margin-bottom: 24px;
+    height: 300px;
+}
+
+.article-meta {
+    font-size: 13px;
+    color: #9aa8ff;
+    margin-bottom: 12px;
+}
+
+.article-content h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.article-content p {
+    font-size: 16px;
+    color: #cfd9ff;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 28px;
+    border-radius: 999px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background: #eaeaea;
+}
+
+/* ===================== Footer ===================== */
+footer {
+    padding: 70px 40px;
+    text-align: center;
+    color: #8fa0ff;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* ===================== Mobile ===================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .nav-center {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-semi-orb"></div>
+
+<!-- Navigation -->
+<div class="island-nav">
+    <div class="nav-logo">ArcByte‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ </div>
+
+    <div class="nav-center">
+        <a href="https://www.arcbytecn.com/">Home</a>
+        <a href="https://news.arcbytecn.com/">News</a>
+        <a href="https://platform.arcbytecn.com/ class="active"">Open Platform</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="http://status.arcbytecn.com/">Status</a>
+        <button class="nav-install" onclick="window.location.href='https://accounts.arcbytecn.com/'">Login</button>
+        <span class="lang">EN ▾</span>
+    </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+    <div>
+        <h1>News Article</h1>
+        <p>Detailed update and insights from ArcByte.</p>
+    </div>
+</div>
+
+<!-- Article Content -->
+<div class="article-container reveal">
+    <div class="article-image">
+        <img src="./images/1.png" alt="AI Infrastructure">
+    </div>
+
+    <div class="article-meta">Jan 2026 · Updates</div>
+
+    <div class="article-content">
+        <h2>ArcByte Expands AI Infrastructure</h2>
+        <p>
+            ArcByte has successfully expanded its AI compute infrastructure, enabling faster inference,
+            higher reliability, and global availability for enterprise clients.
+        </p>
+        <p>
+            This expansion includes new GPU clusters, improved network optimization, and enhanced
+            cloud integration. These upgrades ensure that AI models can run efficiently at scale,
+            supporting our clients’ diverse computational needs.
+        </p>
+        <p>
+            By investing in cutting-edge infrastructure, ArcByte continues to lead in AI innovation,
+            providing businesses worldwide with tools to transform their operations intelligently.
+        </p>
+
+        <a class="back-btn" href="http://news.arcbytecn.com">← Back to News</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    Copyright © 2026 ArcByte Limited. All Rights Reserved.
+</footer>
+
+<script>
+/* Scroll reveal */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
